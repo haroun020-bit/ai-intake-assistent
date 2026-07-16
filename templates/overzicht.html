@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overzicht intakes</title>
     <style>
         body {
@@ -11,7 +12,7 @@
             padding: 40px 20px;
         }
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             background-color: white;
             padding: 30px;
@@ -27,9 +28,6 @@
             text-decoration: none;
             font-weight: bold;
         }
-        a:hover {
-            text-decoration: underline;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -44,9 +42,7 @@
         td {
             padding: 12px;
             border-bottom: 1px solid #eee;
-        }
-        tr:hover {
-            background-color: #f9f9f9;
+            vertical-align: top;
         }
         .badge {
             display: inline-block;
@@ -56,14 +52,57 @@
             color: white;
             font-size: 13px;
         }
-        .badge-SPOED {
-            background-color: #c0392b;
+        .badge-SPOED { background-color: #c0392b; }
+        .badge-DRINGEND { background-color: #e67e22; }
+        .badge-REGULIER { background-color: #27ae60; }
+
+        .status-nieuw { color: #7f8c8d; font-weight: bold; }
+        .status-in_behandeling { color: #2980b9; font-weight: bold; }
+        .status-afgerond { color: #27ae60; font-weight: bold; }
+
+        .status-knop {
+            display: block;
+            width: 100%;
+            margin-top: 4px;
+            padding: 4px 8px;
+            font-size: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
         }
-        .badge-DRINGEND {
-            background-color: #e67e22;
+        .status-knop:hover {
+            background-color: #f0f2f5;
         }
-        .badge-REGULIER {
-            background-color: #27ae60;
+
+        @media (max-width: 800px) {
+            .container {
+                padding: 15px;
+            }
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead {
+                display: none;
+            }
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                padding: 10px;
+            }
+            td {
+                border: none;
+                padding: 6px 0;
+            }
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                display: block;
+                color: #1a3a5c;
+                font-size: 12px;
+                text-transform: uppercase;
+            }
         }
     </style>
 </head>
@@ -73,24 +112,42 @@
         <p><a href="/">&larr; Terug naar het formulier</a></p>
 
         <table>
-           <tr>
-            <th>Naam</th>
-            <th>Telefoon</th>
-            <th>Adres</th>
-            <th>Probleem</th>
-            <th>Prioriteit</th>
-            <th>Advies</th>
-        </tr>
-        {% for intake in intakes %}
-        <tr>
-            <td>{{ intake.naam }}</td>
-            <td>{{ intake.telefoon }}</td>
-            <td>{{ intake.adres }}</td>
-            <td>{{ intake.probleem }}</td>
-            <td><span class="badge badge-{{ intake.prioriteit }}">{{ intake.prioriteit }}</span></td>
-            <td>{{ intake.advies }}</td>
-        </tr>
-        {% endfor %}
+            <tr>
+                <th>Tijdstip</th>
+                <th>Naam</th>
+                <th>Telefoon</th>
+                <th>Adres</th>
+                <th>Probleem</th>
+                <th>Prioriteit</th>
+                <th>Advies</th>
+                <th>Status</th>
+            </tr>
+            {% for intake in intakes %}
+            <tr>
+                <td data-label="Tijdstip">{{ intake.tijdstip }}</td>
+                <td data-label="Naam">{{ intake.naam }}</td>
+                <td data-label="Telefoon">{{ intake.telefoon }}</td>
+                <td data-label="Adres">{{ intake.adres }}</td>
+                <td data-label="Probleem">{{ intake.probleem }}</td>
+                <td data-label="Prioriteit"><span class="badge badge-{{ intake.prioriteit }}">{{ intake.prioriteit }}</span></td>
+                <td data-label="Advies">{{ intake.advies }}</td>
+                <td data-label="Status">
+                    <span class="status-{{ intake.status }}">{{ intake.status }}</span>
+
+                    {% if intake.status != "in_behandeling" %}
+                    <form method="POST" action="/status/{{ intake.id }}/in_behandeling">
+                        <button class="status-knop" type="submit">In behandeling</button>
+                    </form>
+                    {% endif %}
+
+                    {% if intake.status != "afgerond" %}
+                    <form method="POST" action="/status/{{ intake.id }}/afgerond">
+                        <button class="status-knop" type="submit">Afronden</button>
+                    </form>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
         </table>
     </div>
 </body>

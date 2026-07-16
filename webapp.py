@@ -1,9 +1,10 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import anthropic
 import json
+from datetime import datetime
 
 app = Flask(__name__)
 client = anthropic.Anthropic()
@@ -33,7 +34,14 @@ def home():
         adres = request.form["adres"]
         probleem = request.form["probleem"]
 
-        if naam.strip() == "" or probleem.strip() == "" or telefoon.strip() == "" or adres.strip() == "":
+        velden_leeg = (
+            naam.strip() == "" or
+            probleem.strip() == "" or
+            telefoon.strip() == "" or
+            adres.strip() == ""
+        )
+
+        if velden_leeg:
             foutmelding = "Vul alle velden in."
         else:
             resultaat = analyseer_melding(probleem)
@@ -44,20 +52,46 @@ def home():
                 "adres": adres,
                 "probleem": probleem,
                 "prioriteit": resultaat["prioriteit"],
-                "advies": resultaat["advies"]
+                "advies": resultaat["advies"],
+                "status": "nieuw",
+                "tijdstip": datetime.now().strftime("%d-%m-%Y %H:%M")
             }
             with open("intakes.jsonl", "a") as bestand:
                 bestand.write(json.dumps(intake) + "\n")
 
     return render_template("index.html", resultaat=resultaat, naam=naam, foutmelding=foutmelding)
 
-@app.route("/overzicht")
-def overzicht():
+def laad_alle_intakes():
     alle_intakes = []
     with open("intakes.jsonl", "r") as bestand:
-        for regel in bestand:
-            alle_intakes.append(json.loads(regel))
+        for i, regel in enumerate(bestand):
+            intake = json.loads(regel)
+            intake["id"] = i
+            if "status" not in intake:
+                intake["status"] = "nieuw"
+            alle_intakes.append(intake)
+    return alle_intakes
+
+@app.route("/overzicht")
+def overzicht():
+    alle_intakes = laad_alle_intakes()
+
+    prioriteit_volgorde = {"SPOED": 0, "DRINGEND": 1, "REGULIER": 2}
+    alle_intakes.sort(key=lambda intake: prioriteit_volgorde.get(intake["prioriteit"], 3))
+
     return render_template("overzicht.html", intakes=alle_intakes)
+
+@app.route("/status/<int:intake_id>/<nieuwe_status>", methods=["POST"])
+def wijzig_status(intake_id, nieuwe_status):
+    alle_intakes = laad_alle_intakes()
+    alle_intakes[intake_id]["status"] = nieuwe_status
+
+    with open("intakes.jsonl", "w") as bestand:
+        for intake in alle_intakes:
+            intake_zonder_id = {k: v for k, v in intake.items() if k != "id"}
+            bestand.write(json.dumps(intake_zonder_id) + "\n")
+
+    return redirect("/overzicht")
 
 if __name__ == "__main__":
     app.run(debug=True)

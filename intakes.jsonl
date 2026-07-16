@@ -1,16 +1,20 @@
-{"naam": "ha", "probleem": "geen stroom", "prioriteit": "DRINGEND", "advies": "Controleer meterkast en zekeringen bij de klant ter plaatse."}
-{"naam": "rs", "probleem": "mijn cv ketel rateld ", "prioriteit": "REGULIER", "advies": "Controleer de cv-ketel op een defecte pomp of luchtophoping in het systeem."}
-{"naam": "kilo", "probleem": "ik heb honger", "prioriteit": "REGULIER", "advies": "Geen technische storing gemeld; klant terugbellen om verzoek te verduidelijken."}
-{"naam": "jake", "probleem": "we hebben geen warm water ", "prioriteit": "DRINGEND", "advies": "Controleer de warmwatervoorziening/boiler bij de klant zo snel mogelijk."}
-{"naam": "haroun", "probleem": "geen stroom thuis", "prioriteit": "DRINGEND", "advies": "Controleer meterkast en zekeringen op stroomuitval bij klant."}
-{"naam": "haroun", "probleem": "geen water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer de watertoevoer en aansluitingen, mogelijk een afsluiter dicht of storing bij het waterleidingbedrijf."}
-{"naam": "haroun", "probleem": "geen water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer de watertoevoer en eventuele afsluiters bij de klant op storingen of blokkades."}
-{"naam": "haroun", "probleem": "geen eelekta\r\n", "prioriteit": "DRINGEND", "advies": "Controleer stroomuitval bij klant en inspecteer meterkast en aansluitingen."}
-{"naam": "haroun", "probleem": "mijn cv ketel lekt\r\n", "prioriteit": "SPOED", "advies": "Waterschade risico: sluit de watertoevoer naar de ketel af en controleer direct op lekkage."}
-{"naam": "haroun", "probleem": "geen warm water\r\n", "prioriteit": "DRINGEND", "advies": "Boiler/cv-ketel controleren op storing die warmwatervoorziening verhindert."}
-{"naam": "haroun", "probleem": "geen warm water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer boiler/cv-ketel op storing of ontsteking, plan snel een bezoek in."}
-{"naam": "george", "probleem": "geen elektra", "prioriteit": "DRINGEND", "advies": "Controleer meterkast op hoofdschakelaar/aardlekschakelaar en beoordeel elektrische veiligheid ter plekke."}
-{"naam": "simon", "probleem": "waterschade", "prioriteit": "SPOED", "advies": "Direct ter plaatse gaan om waterschade te beperken en de bron van het lek af te sluiten."}
-{"naam": "haroun", "probleem": "geen water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer waterleiding en watertoevoer bij de klant, mogelijk een afsluiter dicht of leidingbreuk."}
-{"naam": "gra", "probleem": "geen strom\r\n", "prioriteit": "DRINGEND", "advies": "Zo snel mogelijk langsgaan om de stroomstoring te verhelpen."}
-{"naam": "haroun", "telefoon": "061234556", "adres": "de bredererodestraat 148", "probleem": "mijn cv ketel rateld", "prioriteit": "REGULIER", "advies": "Controleer de CV-ketel op een defecte pomp of luchtophoping in het systeem."}
+{"naam": "ha", "probleem": "geen stroom", "prioriteit": "DRINGEND", "advies": "Controleer meterkast en zekeringen bij de klant ter plaatse.", "status": "nieuw"}
+{"naam": "rs", "probleem": "mijn cv ketel rateld ", "prioriteit": "REGULIER", "advies": "Controleer de cv-ketel op een defecte pomp of luchtophoping in het systeem.", "status": "nieuw"}
+{"naam": "kilo", "probleem": "ik heb honger", "prioriteit": "REGULIER", "advies": "Geen technische storing gemeld; klant terugbellen om verzoek te verduidelijken.", "status": "nieuw"}
+{"naam": "jake", "probleem": "we hebben geen warm water ", "prioriteit": "DRINGEND", "advies": "Controleer de warmwatervoorziening/boiler bij de klant zo snel mogelijk.", "status": "nieuw"}
+{"naam": "haroun", "probleem": "geen stroom thuis", "prioriteit": "DRINGEND", "advies": "Controleer meterkast en zekeringen op stroomuitval bij klant.", "status": "nieuw"}
+{"naam": "haroun", "probleem": "geen water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer de watertoevoer en aansluitingen, mogelijk een afsluiter dicht of storing bij het waterleidingbedrijf.", "status": "nieuw"}
+{"naam": "haroun", "probleem": "geen water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer de watertoevoer en eventuele afsluiters bij de klant op storingen of blokkades.", "status": "nieuw"}
+{"naam": "haroun", "probleem": "geen eelekta\r\n", "prioriteit": "DRINGEND", "advies": "Controleer stroomuitval bij klant en inspecteer meterkast en aansluitingen.", "status": "nieuw"}
+{"naam": "haroun", "probleem": "mijn cv ketel lekt\r\n", "prioriteit": "SPOED", "advies": "Waterschade risico: sluit de watertoevoer naar de ketel af en controleer direct op lekkage.", "status": "in_behandeling"}
+{"naam": "haroun", "probleem": "geen warm water\r\n", "prioriteit": "DRINGEND", "advies": "Boiler/cv-ketel controleren op storing die warmwatervoorziening verhindert.", "status": "nieuw"}
+{"naam": "haroun", "probleem": "geen warm water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer boiler/cv-ketel op storing of ontsteking, plan snel een bezoek in.", "status": "nieuw"}
+{"naam": "george", "probleem": "geen elektra", "prioriteit": "DRINGEND", "advies": "Controleer meterkast op hoofdschakelaar/aardlekschakelaar en beoordeel elektrische veiligheid ter plekke.", "status": "nieuw"}
+{"naam": "simon", "probleem": "waterschade", "prioriteit": "SPOED", "advies": "Direct ter plaatse gaan om waterschade te beperken en de bron van het lek af te sluiten.", "status": "nieuw"}
+{"naam": "haroun", "probleem": "geen water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer waterleiding en watertoevoer bij de klant, mogelijk een afsluiter dicht of leidingbreuk.", "status": "nieuw"}
+{"naam": "gra", "probleem": "geen strom\r\n", "prioriteit": "DRINGEND", "advies": "Zo snel mogelijk langsgaan om de stroomstoring te verhelpen.", "status": "nieuw"}
+{"naam": "haroun", "telefoon": "061234556", "adres": "de bredererodestraat 148", "probleem": "mijn cv ketel rateld", "prioriteit": "REGULIER", "advies": "Controleer de CV-ketel op een defecte pomp of luchtophoping in het systeem.", "status": "nieuw"}
+{"naam": "haroun", "telefoon": "0621323344", "adres": "postjesweg", "probleem": "mijn toilet is verstopt", "prioriteit": "REGULIER", "advies": "Ontstop het toilet met een ontstopper of veer, controleer op vreemde voorwerpen.", "status": "nieuw"}
+{"naam": "haroun", "telefoon": "0632221122", "adres": "bilderdijk", "probleem": "geen energie en gas\r\n", "prioriteit": "SPOED", "advies": "Direct ter plaatse gaslucht/veiligheid controleren en gastoevoer indien nodig afsluiten.", "status": "nieuw"}
+{"naam": "harry", "telefoon": "0556757785", "adres": "amstelveen", "probleem": "geen waterdruk", "prioriteit": "REGULIER", "advies": "Controleer waterdruk in het systeem en bijvullen of ontluchten indien nodig.", "status": "nieuw", "tijdstip": "16-07-2026 23:23"}
+{"naam": "rodri", "telefoon": "0612122334", "adres": "de pijp", "probleem": "geen waterdruk kunnen niet douchen\r\n", "prioriteit": "REGULIER", "advies": "Controleer waterdrukregelaar en eventuele afsluiters bij de klant.", "status": "nieuw", "tijdstip": "16-07-2026 23:32"}
