@@ -1,0 +1,15 @@
+{"naam": "ha", "probleem": "geen stroom", "prioriteit": "DRINGEND", "advies": "Controleer meterkast en zekeringen bij de klant ter plaatse."}
+{"naam": "rs", "probleem": "mijn cv ketel rateld ", "prioriteit": "REGULIER", "advies": "Controleer de cv-ketel op een defecte pomp of luchtophoping in het systeem."}
+{"naam": "kilo", "probleem": "ik heb honger", "prioriteit": "REGULIER", "advies": "Geen technische storing gemeld; klant terugbellen om verzoek te verduidelijken."}
+{"naam": "jake", "probleem": "we hebben geen warm water ", "prioriteit": "DRINGEND", "advies": "Controleer de warmwatervoorziening/boiler bij de klant zo snel mogelijk."}
+{"naam": "haroun", "probleem": "geen stroom thuis", "prioriteit": "DRINGEND", "advies": "Controleer meterkast en zekeringen op stroomuitval bij klant."}
+{"naam": "haroun", "probleem": "geen water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer de watertoevoer en aansluitingen, mogelijk een afsluiter dicht of storing bij het waterleidingbedrijf."}
+{"naam": "haroun", "probleem": "geen water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer de watertoevoer en eventuele afsluiters bij de klant op storingen of blokkades."}
+{"naam": "haroun", "probleem": "geen eelekta\r\n", "prioriteit": "DRINGEND", "advies": "Controleer stroomuitval bij klant en inspecteer meterkast en aansluitingen."}
+{"naam": "haroun", "probleem": "mijn cv ketel lekt\r\n", "prioriteit": "SPOED", "advies": "Waterschade risico: sluit de watertoevoer naar de ketel af en controleer direct op lekkage."}
+{"naam": "haroun", "probleem": "geen warm water\r\n", "prioriteit": "DRINGEND", "advies": "Boiler/cv-ketel controleren op storing die warmwatervoorziening verhindert."}
+{"naam": "haroun", "probleem": "geen warm water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer boiler/cv-ketel op storing of ontsteking, plan snel een bezoek in."}
+{"naam": "george", "probleem": "geen elektra", "prioriteit": "DRINGEND", "advies": "Controleer meterkast op hoofdschakelaar/aardlekschakelaar en beoordeel elektrische veiligheid ter plekke."}
+{"naam": "simon", "probleem": "waterschade", "prioriteit": "SPOED", "advies": "Direct ter plaatse gaan om waterschade te beperken en de bron van het lek af te sluiten."}
+{"naam": "haroun", "probleem": "geen water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer waterleiding en watertoevoer bij de klant, mogelijk een afsluiter dicht of leidingbreuk."}
+{"naam": "gra", "probleem": "geen strom\r\n", "prioriteit": "DRINGEND", "advies": "Zo snel mogelijk langsgaan om de stroomstoring te verhelpen."}

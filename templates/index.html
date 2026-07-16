@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Installatiebedrijf - Intake</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #1a3a5c;
+            margin-top: 0;
+        }
+        label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            font-family: inherit;
+        }
+        button {
+            background-color: #1a3a5c;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #14304c;
+        }
+        .fout {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .resultaat {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Meld uw probleem</h1>
+        <form method="POST">
+            <label>Uw naam:</label>
+            <input type="text" name="naam">
+            <label>Wat is het probleem?</label>
+            <textarea name="probleem" rows="4"></textarea>
+            <button type="submit">Versturen</button>
+        </form>
+        {% if foutmelding %}
+            <p class="fout">{{ foutmelding }}</p>
+        {% endif %}
+        {% if resultaat %}
+            <div class="resultaat">
+                <h2>Bedankt, {{ naam }}!</h2>
+                <p>We hebben uw melding ontvangen en pakken dit zo snel mogelijk op.</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

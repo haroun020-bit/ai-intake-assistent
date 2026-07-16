@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Overzicht intakes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #1a3a5c;
+            margin-top: 0;
+        }
+        a {
+            color: #1a3a5c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th {
+            background-color: #1a3a5c;
+            color: white;
+            text-align: left;
+            padding: 12px;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            color: white;
+            font-size: 13px;
+        }
+        .badge-SPOED {
+            background-color: #c0392b;
+        }
+        .badge-DRINGEND {
+            background-color: #e67e22;
+        }
+        .badge-REGULIER {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Alle intakes</h1>
+        <p><a href="/">&larr; Terug naar het formulier</a></p>
+
+        <table>
+            <tr>
+                <th>Naam</th>
+                <th>Probleem</th>
+                <th>Prioriteit</th>
+                <th>Advies</th>
+            </tr>
+            {% for intake in intakes %}
+            <tr>
+                <td>{{ intake.naam }}</td>
+                <td>{{ intake.probleem }}</td>
+                <td><span class="badge badge-{{ intake.prioriteit }}">{{ intake.prioriteit }}</span></td>
+                <td>{{ intake.advies }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
