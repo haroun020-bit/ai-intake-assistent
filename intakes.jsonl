@@ -13,3 +13,4 @@
 {"naam": "simon", "probleem": "waterschade", "prioriteit": "SPOED", "advies": "Direct ter plaatse gaan om waterschade te beperken en de bron van het lek af te sluiten."}
 {"naam": "haroun", "probleem": "geen water\r\n", "prioriteit": "DRINGEND", "advies": "Controleer waterleiding en watertoevoer bij de klant, mogelijk een afsluiter dicht of leidingbreuk."}
 {"naam": "gra", "probleem": "geen strom\r\n", "prioriteit": "DRINGEND", "advies": "Zo snel mogelijk langsgaan om de stroomstoring te verhelpen."}
+{"naam": "haroun", "telefoon": "061234556", "adres": "de bredererodestraat 148", "probleem": "mijn cv ketel rateld", "prioriteit": "REGULIER", "advies": "Controleer de CV-ketel op een defecte pomp of luchtophoping in het systeem."}

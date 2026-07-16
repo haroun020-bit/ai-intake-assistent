@@ -29,15 +29,19 @@ def home():
 
     if request.method == "POST":
         naam = request.form["naam"]
+        telefoon = request.form["telefoon"]
+        adres = request.form["adres"]
         probleem = request.form["probleem"]
 
-        if naam.strip() == "" or probleem.strip() == "":
-            foutmelding = "Vul zowel uw naam als het probleem in."
+        if naam.strip() == "" or probleem.strip() == "" or telefoon.strip() == "" or adres.strip() == "":
+            foutmelding = "Vul alle velden in."
         else:
             resultaat = analyseer_melding(probleem)
 
             intake = {
                 "naam": naam,
+                "telefoon": telefoon,
+                "adres": adres,
                 "probleem": probleem,
                 "prioriteit": resultaat["prioriteit"],
                 "advies": resultaat["advies"]

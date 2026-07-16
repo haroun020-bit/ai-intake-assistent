@@ -73,20 +73,24 @@
         <p><a href="/">&larr; Terug naar het formulier</a></p>
 
         <table>
-            <tr>
-                <th>Naam</th>
-                <th>Probleem</th>
-                <th>Prioriteit</th>
-                <th>Advies</th>
-            </tr>
-            {% for intake in intakes %}
-            <tr>
-                <td>{{ intake.naam }}</td>
-                <td>{{ intake.probleem }}</td>
-                <td><span class="badge badge-{{ intake.prioriteit }}">{{ intake.prioriteit }}</span></td>
-                <td>{{ intake.advies }}</td>
-            </tr>
-            {% endfor %}
+           <tr>
+            <th>Naam</th>
+            <th>Telefoon</th>
+            <th>Adres</th>
+            <th>Probleem</th>
+            <th>Prioriteit</th>
+            <th>Advies</th>
+        </tr>
+        {% for intake in intakes %}
+        <tr>
+            <td>{{ intake.naam }}</td>
+            <td>{{ intake.telefoon }}</td>
+            <td>{{ intake.adres }}</td>
+            <td>{{ intake.probleem }}</td>
+            <td><span class="badge badge-{{ intake.prioriteit }}">{{ intake.prioriteit }}</span></td>
+            <td>{{ intake.advies }}</td>
+        </tr>
+        {% endfor %}
         </table>
     </div>
 </body>
