@@ -20,7 +20,13 @@ def analyseer_melding(probleem):
     )
     for blok in antwoord.content:
         if blok.type == "text":
-            return json.loads(blok.text.strip())
+            try:
+                return json.loads(blok.text.strip())
+            except json.JSONDecodeError:
+                return {
+                    "prioriteit": "REGULIER",
+                    "advies": "Kon niet automatisch worden geanalyseerd, graag handmatig beoordelen."
+                }
 
 @app.route("/", methods=["GET", "POST"])
 def home():
